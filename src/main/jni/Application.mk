@@ -1,4 +1,4 @@
-APP_STL := c++_shared
+APP_STL := pdfc++_shared
 APP_CPPFLAGS += -fexceptions
 
 #For ANativeWindow support

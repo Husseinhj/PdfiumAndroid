@@ -5,20 +5,20 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:7.2.2'
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
-        versionName "1.9.2"
+        versionName "1.9.3"
         buildConfigField 'String', 'VERSION_NAME', "\"${defaultConfig.versionName}\""
     }
     buildTypes {
@@ -26,6 +26,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     sourceSets{
@@ -44,12 +49,3 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
-
-// Maven Publishing
-ext {
-    PUBLISH_GROUP_ID = 'com.github.mhiew'
-    PUBLISH_VERSION = "1.9.2"
-    PUBLISH_ARTIFACT_ID = 'pdfium-android'
-}
-
-apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"

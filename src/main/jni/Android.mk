@@ -14,7 +14,7 @@ include $(PREBUILT_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libmodc++_shared
 
-LOCAL_SRC_FILES := $(LOCAL_PATH)/lib/$(ARCH_PATH)/libc++_shared.so
+LOCAL_SRC_FILES := $(LOCAL_PATH)/lib/$(ARCH_PATH)/libpdfc++_shared.so
 
 include $(PREBUILT_SHARED_LIBRARY)
 
